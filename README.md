@@ -19,6 +19,7 @@ full `/dev` access.
 | vim | `vim` | Text editor |
 | tree | `tree` | Directory tree listing |
 | python3 | `python3` | Python interpreter |
+| python3-venv | `python3 -m venv` | Python virtual environment support |
 | pip3 | `pip3` | Python package manager |
 | xxd | `xxd` | Hex dump / reverse hex dump |
 | tmux | `tmux` | Terminal multiplexer |
