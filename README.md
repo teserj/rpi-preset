@@ -63,6 +63,8 @@ full `/dev` access.
 | mosquitto-clients | `mosquitto_pub`, `mosquitto_sub` | MQTT client tools |
 | iw | `iw` | Wireless device configuration |
 | wireless-tools | `iwconfig`, `iwlist` | Legacy wireless utilities |
+| iputils-ping | `ping` | ICMP echo requests |
+| net-tools | `ifconfig`, `netstat`, `route` | Classic network utilities |
 
 ## Quick Start
 

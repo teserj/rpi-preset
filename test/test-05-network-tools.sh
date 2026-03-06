@@ -32,6 +32,8 @@ check_tool "iperf3"         iperf3 --version
 check_tool "socat"          socat -V
 check_tool "mosquitto_pub"  which mosquitto_pub
 check_tool "iw"             iw --version
+check_tool "ping"           ping -c 1 127.0.0.1
+check_tool "ifconfig"       which ifconfig
 
 echo ""
 echo "  Results: $PASS passed, $FAIL failed"
