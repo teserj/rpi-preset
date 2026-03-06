@@ -1,6 +1,0 @@
-I want to create a docker container that runs on headless Raspberry Pi 4 (and later) to make it a embedded system debugging toolbox. The container should support a bunch of tools for debugging other iot devices. Some reference tools I have in mind:
-* handy/must-have utilities on Rpi: fdfind, ripgrep, git, ssh, openssl, vim, tree, python3, pip, hexdump, visidata, telnet, 
-* embedded device debugging: minicom, stty, lrzsz, openocd, multigdb (for JTAG debugging), sigrok (for oscilloscope/ logic analyzer support)
-* network: netcat, wireshark, aircrack-ng, nmap
-
-First list any handy tool if I missed anything, and then propose a plan to build it.
