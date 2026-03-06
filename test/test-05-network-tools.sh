@@ -31,7 +31,6 @@ check_tool "netcat"         which nc
 check_tool "iperf3"         iperf3 --version
 check_tool "socat"          socat -V
 check_tool "mosquitto_pub"  mosquitto_pub --help
-check_tool "aircrack-ng"    which aircrack-ng
 check_tool "iw"             iw --version
 
 echo ""

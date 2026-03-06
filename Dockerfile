@@ -52,7 +52,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     mosquitto-clients \
     iw \
     wireless-tools \
-    aircrack-ng \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

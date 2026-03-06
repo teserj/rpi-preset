@@ -61,7 +61,6 @@ full `/dev` access.
 | socat | `socat` | Multipurpose relay / socket tool |
 | netcat | `nc` | TCP/UDP connection tool |
 | mosquitto-clients | `mosquitto_pub`, `mosquitto_sub` | MQTT client tools |
-| aircrack-ng | `aircrack-ng`, `airmon-ng` | WiFi security auditing |
 | iw | `iw` | Wireless device configuration |
 | wireless-tools | `iwconfig`, `iwlist` | Legacy wireless utilities |
 
@@ -98,27 +97,6 @@ services:
 
 See `user-scripts/example-riscv-toolchain.sh` for a working example that
 installs a RISC-V cross-compiler.
-
-## WiFi Monitor Mode Prerequisites
-
-Monitor mode requires the following on the **host** Raspberry Pi (outside the
-container):
-
-- **External USB WiFi adapter** with monitor mode support (e.g., Atheros AR9271,
-  Ralink RT5370).
-- **Host kernel driver** for the adapter must be loaded. Verify with
-  `lsusb` and `dmesg` on the host.
-- The container already runs with `--privileged` and `network_mode: host`, which
-  gives it access to host network interfaces.
-
-To enable monitor mode inside the container:
-
-```bash
-airmon-ng check kill
-airmon-ng start wlan1
-```
-
-Replace `wlan1` with the name of your external WiFi interface.
 
 ## Common Usage Examples
 
