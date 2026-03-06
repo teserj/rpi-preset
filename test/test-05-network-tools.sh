@@ -30,7 +30,7 @@ check_tool "tcpdump"        tcpdump --version
 check_tool "netcat"         which nc
 check_tool "iperf3"         iperf3 --version
 check_tool "socat"          socat -V
-check_tool "mosquitto_pub"  mosquitto_pub --help
+check_tool "mosquitto_pub"  which mosquitto_pub
 check_tool "iw"             iw --version
 
 echo ""

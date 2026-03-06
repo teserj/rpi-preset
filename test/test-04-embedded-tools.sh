@@ -30,8 +30,8 @@ check_tool "gdb-multiarch" gdb-multiarch --version
 check_tool "sigrok-cli"    sigrok-cli --version
 check_tool "i2cdetect"     i2cdetect -V
 check_tool "lsusb"         lsusb --version
-check_tool "lsz (lrzsz)"  which lsz
-check_tool "lrz (lrzsz)"  which lrz
+check_tool "sz (lrzsz)"   which sz
+check_tool "rz (lrzsz)"   which rz
 
 echo ""
 echo "  Results: $PASS passed, $FAIL failed"
