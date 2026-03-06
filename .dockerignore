@@ -1,0 +1,6 @@
+.git
+.claude
+prompt.txt
+test/
+*.md
+!user-scripts/**

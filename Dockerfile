@@ -56,12 +56,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install termshark (arm64 binary from GitHub)
+# Install termshark (architecture-aware binary from GitHub)
 ARG TERMSHARK_VERSION=2.4.0
-RUN curl -fSL "https://github.com/gcla/termshark/releases/download/v${TERMSHARK_VERSION}/termshark_${TERMSHARK_VERSION}_linux_arm64.tar.gz" \
+ARG TARGETARCH=arm64
+RUN curl -fSL "https://github.com/gcla/termshark/releases/download/v${TERMSHARK_VERSION}/termshark_${TERMSHARK_VERSION}_linux_${TARGETARCH}.tar.gz" \
       -o /tmp/termshark.tar.gz \
     && tar -xzf /tmp/termshark.tar.gz -C /tmp \
-    && install -m 0755 /tmp/termshark_${TERMSHARK_VERSION}_linux_arm64/termshark /usr/local/bin/termshark \
+    && install -m 0755 /tmp/termshark_${TERMSHARK_VERSION}_linux_${TARGETARCH}/termshark /usr/local/bin/termshark \
     && rm -rf /tmp/termshark*
 
 # Build-time extensibility: run a user-provided setup script
@@ -75,5 +76,5 @@ RUN if [ -n "$USER_SETUP_SCRIPT" ] && [ -f "/opt/user-scripts/$USER_SETUP_SCRIPT
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/bin/bash"]
