@@ -7,6 +7,7 @@ echo "=============================================="
 echo ""
 echo "--- Tool Versions ---"
 echo "  gdb-multiarch : $(gdb-multiarch --version 2>/dev/null | head -1 || echo 'not found')"
+# openocd prints version info to stderr, so redirect stderr to stdout with 2>&1
 echo "  openocd       : $(openocd --version 2>&1 | head -1 || echo 'not found')"
 echo "  sigrok-cli    : $(sigrok-cli --version 2>/dev/null | head -1 || echo 'not found')"
 echo "  tshark        : $(tshark --version 2>/dev/null | head -1 || echo 'not found')"
