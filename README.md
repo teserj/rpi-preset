@@ -68,7 +68,7 @@ full `/dev` access.
 ## Quick Start
 
 ```bash
-git clone <repo> && cd rpi-docker
+git clone https://github.com/teserj/rpi-preset.git && cd rpi-preset
 docker compose build
 docker compose up -d
 docker exec -it debugbox bash
