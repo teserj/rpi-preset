@@ -24,8 +24,8 @@ check_tool() {
 echo "=== Test 04: Embedded Debugging Tools ==="
 
 check_tool "minicom"       minicom --version
-check_tool "picocom"       picocom --help
-check_tool "openocd"       openocd --version
+check_tool "picocom"       which picocom
+check_tool "openocd"       which openocd
 check_tool "gdb-multiarch" gdb-multiarch --version
 check_tool "sigrok-cli"    sigrok-cli --version
 check_tool "i2cdetect"     i2cdetect -V

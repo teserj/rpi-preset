@@ -41,8 +41,11 @@ run_test "$SCRIPT_DIR/test-02-container-start.sh"
 echo ""
 echo "----------------------------------------------"
 echo "Starting container for tool-check tests..."
-docker compose up -d > /dev/null 2>&1
-sleep 2
+if ! docker compose up -d > /dev/null 2>&1; then
+    echo "FATAL: docker compose up -d failed. Cannot run tool tests."
+    exit 1
+fi
+for i in $(seq 1 30); do docker exec debugbox true 2>/dev/null && break; sleep 1; done
 
 run_test "$SCRIPT_DIR/test-03-general-utils.sh"
 run_test "$SCRIPT_DIR/test-04-embedded-tools.sh"

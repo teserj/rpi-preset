@@ -3,6 +3,9 @@
 
 set -u
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/.."
+
 PASS=0
 FAIL=0
 
@@ -27,9 +30,7 @@ fi
 
 # Start container
 docker compose up -d > /dev/null 2>&1
-
-# Allow a moment for the container to be ready
-sleep 2
+for i in $(seq 1 30); do docker exec debugbox true 2>/dev/null && break; sleep 1; done
 
 # Check marker file exists
 echo -n "  "
